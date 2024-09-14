@@ -33,13 +33,14 @@ const LoginForm = () => {
   return (
     <div style={{
       backgroundImage: `url(${login})`,
-      height: '100vh', // Set a height for the background image to appear
+      height: '100vh',
+       // Set a height for the background image to appear
       backgroundSize: 'cover', // Ensure the background image covers the container
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center'
     }}>
-      <form onSubmit={handleSubmit} style={{backgroundColor: 'rgba(255, 255, 255, 0.8)', padding: '20px', borderRadius: '8px'}}>
+      <form onSubmit={handleSubmit} style={{backgroundColor: 'rgba(255, 255, 255, 0.8)', padding: '20px', borderRadius: '8px'} }>
         <div style={{marginBottom: "10px", color:'black'}}>
           <label>Username:</label>
           <input

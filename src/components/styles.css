@@ -4,6 +4,7 @@
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: playfair display;
   }
   
   .form-group label {
@@ -49,7 +50,12 @@
       width: 140px;
     }
   }
-  
+  .row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
   .language-dropdown {
     font-size: 14px;
     color: #475569;
@@ -62,6 +68,7 @@
     border-radius: 8px;
     cursor: pointer;
     outline: none;
+    font-family: playfair display;
   }
   
   @media screen and (min-width: 768px) {
@@ -73,12 +80,13 @@
 /* Header.css */
 
 .header-container {
+  font-family: playfair display;
   background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   color: #fff;
   padding: 10px 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   position: fixed;
   width: 100%;
@@ -88,7 +96,9 @@
 }
 
 .header-content {
+  font-family: playfair display;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -230,13 +240,12 @@ button:hover {
   padding: 5px;
   cursor: pointer;
 }
-
+.body{
+  font-family: playfair display;
+}
 .home{ 
   background-repeat: no-repeat;
-  background-size: cover;
-  position: fixed;
-  height: 100%;
-  width: 100vw;
+  overflow-y: scroll;
 }
 
 
@@ -260,6 +269,3 @@ button:hover {
   background: #555;
 } 
 
-.login-form-containe{
-
-}
