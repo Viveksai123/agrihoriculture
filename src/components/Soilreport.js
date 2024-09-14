@@ -2,7 +2,7 @@ import React from 'react'
 
 const Soilreport = () => {
   return (
-    <div>
+    <div style={{marginTop:"15vh"}}>
       SoilReport
     </div>
   )

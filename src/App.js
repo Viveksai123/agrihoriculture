@@ -2,53 +2,35 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Homepage from "./components/Homepage";
 import Prices from "./components/Prices";
+import LoginForm from './components/LoginForm'
 import Soilreport from "./components/Soilreport";
-// import Fields from "./components/Fields"; // assuming this component exists
+import Header from "./components/Header";
+import MapComponent from "./components/map";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  // Define all South Indian states in alphabetical order
-  const southIndianStates = ["Andhra Pradesh", "Karnataka", "Kerala", "Tamil Nadu", "Telangana"];
-
-  // useState hook to store the selected state
-  const [selectedState, setSelectedState] = useState("");
-
-  // Function to handle the state selection
-  const handleStateChange = (event) => {
-    setSelectedState(event.target.value);
+  
+  const [activeLanguage, setActiveLanguage] = useState("EN");
+  // Function to handle language change
+  const changeLanguage = (language) => {
+    setActiveLanguage(language);
   };
 
   return (
     <Router>
-      <div className="container mt-4">
-        <h1 className="mb-4">Select a South Indian State</h1>
-        
-        {/* Dropdown to select the state */}
-        <div className="form-group">
-          <select className="form-select" value={selectedState} onChange={handleStateChange}>
-            <option value="" disabled>Select a state</option>
-            {southIndianStates.map((state) => (
-              <option key={state} value={state}>
-                {state}
-              </option>
-            ))}
-          </select>
-        </div>
+      <Header activeLanguage={activeLanguage} changeLanguage={changeLanguage} />
 
-        {/* Display the selected state */}
-        {selectedState && (
-          <div className="mt-4">
-            <h2>Selected State: {selectedState}</h2>
-          </div>
-        )}
+     
 
         <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/prices" element={<Prices />} />
-          <Route path="/soilreport" element={<Soilreport />} />
-          {/* <Route path="/fields" element={<Fields />} /> */}
+          {/* Pass activeLanguage as a prop to the components */}
+          <Route path="/login" element={<LoginForm />} />
+          <Route path="/" element={<Homepage activeLanguage={activeLanguage} />} />
+          <Route path="/prices" element={<Prices activeLanguage={activeLanguage} />} />
+          <Route path="/soilreport" element={<Soilreport activeLanguage={activeLanguage} />} />
+          <Route path="/map" element={<MapComponent activeLanguage={activeLanguage} />} />
         </Routes>
-      </div>
+     
     </Router>
   );
 }

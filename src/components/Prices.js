@@ -143,7 +143,7 @@ const Prices = () => {
   const t = translations[language];
 
   return (
-    <div className="container mt-4">
+    <div className="container " style={{marginTop:"15vh"}}>
       <h2 className="text-center mb-4">{t.title}</h2>
       
       {/* Language Selection */}
